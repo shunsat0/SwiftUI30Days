@@ -36,11 +36,11 @@ struct ContentView: View {
    var body: some View {
        VStack {
            Text(timeString(time: timeCount))
-               .onAppear(
-                   perform: {
-                       let _ = self.timer
-                   }
-               )
+//               .onAppear(
+//                   perform: {
+//                       let _ = self.timer
+//                   }
+//               )
                .font(.largeTitle)
            
            HStack {
