@@ -11,7 +11,7 @@ import SwiftUI
 struct Day3App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(colorR: 0.5, colorG: 0.5, colorB: 0.5)
         }
     }
 }
