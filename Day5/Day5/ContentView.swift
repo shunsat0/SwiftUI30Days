@@ -9,13 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Text("First Tab")
+                .tabItem {
+                    Image(systemName: "1.circle")
+                    Text("First")
+                }
+            
+            Text("Second Tab")
+                .tabItem {
+                    Image(systemName: "2.circle")
+                    Text("Second")
+                }
+                .badge(5)
+            
+            ScrollView {
+
+                ForEach(1..<20) { index in
+
+                    Text("データ\(index)")
+
+                }
+            }
+            .tabItem {
+                Image(systemName: "3.circle")
+                Text("Third")
+            }
         }
-        .padding()
     }
 }
 
