@@ -14,7 +14,7 @@ struct Place: Hashable {
 
 struct ContentView: View {
     @State var place: Place?
-
+    
     let places: [Place] = [
         Place(name: "Tokyo", image: "tokyo"),
         Place(name: "Paris", image: "paris"),
@@ -25,21 +25,41 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(place?.name ?? "")
-                .font(.headline)
-                .padding(.horizontal, 32)
-            
-            VStack {
+        VStack {
+            NavigationStack {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
+                    HStack() {
                         ForEach(places,id: \.self) { place in
-                            Image(place.image)
-                                .resizable()
-                                .cornerRadius(15)
-                                .frame(width: 150, height: 150)
-                            
+                            VStack(alignment: .leading) {
+                                Group {
+                                    Image(place.image)
+                                        .resizable()
+                                    //.aspectRatio(contentMode: .fit)
+                                        .cornerRadius(6)
+                                        .frame(width: 150, height: 150)
+                                    
+                                    Text("観光地")
+                                        .frame(width: 150, alignment: .leading)
+                                        .font(.headline)
+                                    Text("あなたにオススメの観光地です。")
+                                        .lineLimit(1)
+                                        .frame(width: 150, alignment: .leading)
+                                        .font(.caption)
+                                }
+                                .frame(width: 150)
+                            }
                         }
+                    }
+                }
+                .navigationTitle("ホーム")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            // Do Something
+                        }, label: {
+                            Image(systemName: "person.crop.circle.fill")
+                                .font(.system(size: 24))
+                        })
                     }
                 }
             }
