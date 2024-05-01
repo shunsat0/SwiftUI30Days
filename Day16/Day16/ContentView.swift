@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @GestureState var dragOffset = CGSize.zero
+    @GestureState private var dragOffset = CGSize.zero
     @State private var position = CGSize.zero
     
     var body: some View {
@@ -24,8 +24,8 @@ struct ContentView: View {
                         state = value.translation
                     })
                     .onEnded({ (value) in
-                        self.position.height += value.translation.height
-                        self.position.width += value.translation.width
+                        position.height += value.translation.height
+                        position.width += value.translation.width
                     })
             )
     }
