@@ -1,0 +1,15 @@
+{
+  "originHash" : "dac1f0f4203c8313d06fec31ce02505f51f97b2f2e51efba8fc321afc6c3aed0",
+  "pins" : [
+    {
+      "identity" : "swiftuicompatible",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mszmagic/SwiftUICompatible.git",
+      "state" : {
+        "revision" : "eecf659750c8630c6c5659ff731d3bc51208c9cc",
+        "version" : "1.0.9"
+      }
+    }
+  ],
+  "version" : 3
+}
